@@ -27,6 +27,15 @@ abstract class PdoRepository implements Repository
         return $statement->fetch($this->entityName);
     }
 
+    public function fetchByParameters(array $parameters): Entity
+    {
+        $query = "SELECT * FROM {$this->table} WHERE %s;";
+        $paramString = $this->parseParamsAsString($parameters);
+        $statement = $this->db->query(sprintf($query, $paramString), $parameters);
+
+        return $statement->fetch($this->entityName);
+    }
+
     public function fetchAll(): array
     {
         $query = "SELECT * FROM {$this->table};";
@@ -85,5 +94,19 @@ abstract class PdoRepository implements Repository
         ]);
 
         return $statement->rowCount() === 1;
+    }
+
+    private function parseParamsAsString(array $parameters): string
+    {
+        $paramStrings = [];
+
+        foreach ($parameters as $key) {
+            array_push(
+                $paramStrings,
+                sprintf('%1$s = :%1$s', $key)
+            );
+        }
+
+        return implode(' AND ', $paramStrings);
     }
 }

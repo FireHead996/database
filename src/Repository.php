@@ -8,6 +8,8 @@ interface Repository
 {
     public function find(string $id): Entity;
 
+    public function fetchByParameters(array $parameters): Entity;
+
     public function fetchAll(): array;
 
     public function persist(Entity $entity): void;
