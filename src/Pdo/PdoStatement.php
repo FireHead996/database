@@ -32,14 +32,27 @@ final class PdoStatement implements Statement, IteratorAggregate
         }
     }
 
+    /**
+     * @param class-string<Entity> $classOrClassName
+     *
+     * @return Entity
+     */
     public function fetch(string $classOrClassName): Entity
     {
-        return $this->statement->fetch(PDO::FETCH_CLASS);
+        /** @var Entity $object */
+        $object = $this->statement->fetchObject($classOrClassName);
+
+        return $object;
     }
 
+    /**
+     * @param class-string<Entity> $classOrClassName
+     *
+     * @return array<Entity>
+     */
     public function fetchAll(string $classOrClassName): array
     {
-        return $this->statement->fetchAll(PDO::FETCH_CLASS);
+        return $this->statement->fetchAll(PDO::FETCH_CLASS, $classOrClassName);
     }
 
     public function rowCount(): int
