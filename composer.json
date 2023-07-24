@@ -45,7 +45,8 @@
         }
     ],
     "require": {
-        "firehead996/core": "dev-main"
+        "firehead996/core": "dev-main",
+        "ramsey/uuid": "*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "*",

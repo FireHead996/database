@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "428250e8777e838218fe9e7d7ac048ed",
+    "content-hash": "de3bf93d48c028271d8a3a37c0d739be",
     "packages": [
         {
             "name": "brick/math",
@@ -66,7 +66,7 @@
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "git@github.com:FireHead996/core.git",
+                "url": "https://github.com/FireHead996/core.git",
                 "reference": "1dd341d7489c874988bcf2b6801382f1eff2f521"
             },
             "dist": {

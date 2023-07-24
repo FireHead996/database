@@ -4,11 +4,12 @@ declare(strict_types = 1);
 
 namespace FireHead996\Database\Pdo;
 
+use FireHead996\Database\Entity;
 use FireHead996\Database\Statement;
-use Iterator;
 use IteratorAggregate;
 use PDO;
 use PDOStatement as DatabaseStatement;
+use Traversable;
 
 final class PdoStatement implements Statement, IteratorAggregate
 {
@@ -31,7 +32,7 @@ final class PdoStatement implements Statement, IteratorAggregate
         }
     }
 
-    public function fetch(string $classOrClassName): object
+    public function fetch(string $classOrClassName): Entity
     {
         return $this->statement->fetch(PDO::FETCH_CLASS);
     }
@@ -39,6 +40,11 @@ final class PdoStatement implements Statement, IteratorAggregate
     public function fetchAll(string $classOrClassName): array
     {
         return $this->statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    public function rowCount(): int
+    {
+        return $this->statement->rowCount();
     }
 
     public function prepareParams(array $params): void
@@ -53,7 +59,7 @@ final class PdoStatement implements Statement, IteratorAggregate
         $this->statement->execute();
     }
 
-    public function getIterator(): Iterator
+    public function getIterator(): Traversable
     {
         return $this->statement->getIterator();
     }
