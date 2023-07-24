@@ -12,7 +12,7 @@ trait UuidEntity
         private ?string $id = null
     ) {
         if (is_null($this->id)) {
-            $this->id = Uuid::uuid4();
+            $this->id = Uuid::uuid4()->toString();
         }
     }
 
