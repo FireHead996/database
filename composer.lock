@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de3bf93d48c028271d8a3a37c0d739be",
+    "content-hash": "8d9f8e857d009accd6920a6dbead8dfd",
     "packages": [
         {
             "name": "brick/math",
@@ -60,46 +60,6 @@
                 }
             ],
             "time": "2023-01-15T23:15:59+00:00"
-        },
-        {
-            "name": "firehead996/core",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FireHead996/core.git",
-                "reference": "1dd341d7489c874988bcf2b6801382f1eff2f521"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FireHead996/core/zipball/1dd341d7489c874988bcf2b6801382f1eff2f521",
-                "reference": "1dd341d7489c874988bcf2b6801382f1eff2f521",
-                "shasum": ""
-            },
-            "require": {
-                "ramsey/uuid": "4.7.4"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "FireHead996\\Core\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Mikołaj Panecki",
-                    "email": "mikolaj@wod.guru"
-                }
-            ],
-            "description": "Description of project core.",
-            "support": {
-                "source": "https://github.com/FireHead996/core/tree/main",
-                "issues": "https://github.com/FireHead996/core/issues"
-            },
-            "time": "2023-07-21T07:20:46+00:00"
         },
         {
             "name": "ramsey/collection",
@@ -3917,9 +3877,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "firehead996/core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

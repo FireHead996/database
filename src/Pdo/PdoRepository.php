@@ -10,11 +10,10 @@ use FireHead996\Database\Repository;
 
 abstract class PdoRepository implements Repository
 {
-    protected string $entityName = 'Entity';
-    protected string $table = 'Entities';
-
     public function __construct(
-        private Connection $db
+        private Connection $db,
+        private string $entityName,
+        private string $table
     ) {
     }
 
