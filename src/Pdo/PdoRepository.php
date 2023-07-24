@@ -79,7 +79,7 @@ abstract class PdoRepository implements Repository
 
     public function exists(Entity $entity): bool
     {
-        $query = "SELECT COUNT(*) FROM {$this->table} WHERE id = :id;";
+        $query = "SELECT id FROM {$this->table} WHERE id = :id;";
         $statement = $this->db->query($query, [
             ':id' => $entity->getId(),
         ]);
