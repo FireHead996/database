@@ -1,0 +1,55 @@
+{
+    "name": "firehead996/database",
+    "description": "Database abstraction layer library",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0-dev",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Mikołaj Panecki",
+            "email": "firehead996@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FireHead996\\Database\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FireHead996\\Database\\Test\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "check-code": [
+            "@cs-fixer",
+            "@phpstan"
+        ],
+
+        "cs-fixer": "vendor/bin/php-cs-fixer fix --config .cs.php",
+        "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon",
+
+        "test": "phpunit --configuration phpunit.xml --do-not-cache-result --colors=always --display-deprecations",
+
+        "post-install-cmd": "@check-code",
+        "post-update-cmd": "@check-code"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/FireHead996/core.git"
+        }
+    ],
+    "require": {
+        "firehead996/core": "dev-main"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "*",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^10.2"
+    }
+}
