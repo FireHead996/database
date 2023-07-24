@@ -38,14 +38,7 @@
         "post-install-cmd": "@check-code",
         "post-update-cmd": "@check-code"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "https://github.com/FireHead996/core.git"
-        }
-    ],
     "require": {
-        "firehead996/core": "dev-main",
         "ramsey/uuid": "*"
     },
     "require-dev": {
